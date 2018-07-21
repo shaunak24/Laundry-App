@@ -26,13 +26,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
         resetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(newPassword.getText().toString().trim().equals(reenterPassword.getText().toString().trim())) {
-                    Toast.makeText(getBaseContext(), "Password successfully changed", Toast.LENGTH_SHORT).show();
-                    // Add new password to firebase
+                if (newPassword.getText().toString().trim().length() >= 6) {
+                    if (newPassword.getText().toString().trim().equals(reenterPassword.getText().toString().trim())) {
+                        Toast.makeText(getBaseContext(), "Password successfully changed", Toast.LENGTH_SHORT).show();
+                        // Add new password to firebase
 
-                }
-                else
-                    Toast.makeText(getBaseContext(), "Password does not match !!", Toast.LENGTH_SHORT).show();
+                    } else
+                        Toast.makeText(getBaseContext(), "Password does not match !!", Toast.LENGTH_SHORT).show();
+                }else
+                    Toast.makeText(getBaseContext(), "Password must be atleast 6 characters long !!", Toast.LENGTH_SHORT).show();
             }
         });
     }

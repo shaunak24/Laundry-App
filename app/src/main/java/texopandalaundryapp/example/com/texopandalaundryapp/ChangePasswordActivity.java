@@ -29,6 +29,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 if(newPassword.getText().toString().trim().equals(reenterPassword.getText().toString().trim())) {
                     Toast.makeText(getBaseContext(), "Password successfully changed", Toast.LENGTH_SHORT).show();
                     // Add new password to firebase
+
                 }
                 else
                     Toast.makeText(getBaseContext(), "Password does not match !!", Toast.LENGTH_SHORT).show();
